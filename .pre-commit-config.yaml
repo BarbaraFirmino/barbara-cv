@@ -20,3 +20,13 @@ repos:
   rev: 23.3.0
   hooks:
   -  id: black
+
+- repo: https://github.com/fsouza/autoflake8
+  rev: v0.4.0
+  hooks:
+  -   id: autoflake8
+
+- repo: https://github.com/PyCQA/flake8
+  rev: 6.0.0
+  hooks:
+  -   id: flake8
