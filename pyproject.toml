@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "barbara-cv"
+version = "0.1.0"
+description = ""
+authors = ["Arnaldo Gualberto <arnaldo.g12@gmail.com>"]
+readme = "README.md"
+packages = [{include = "barbara_cv"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.25.0"
+pillow = "^9.5.0"
+typer = {extras = ["all"], version = "^0.9.0"}
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+isort = "^5.12.0"
+pylint = "^2.17.4"
+ruff = "^0.0.275"
+flake8 = "^6.0.0"
+autoflake8 = "^0.4.0"
+pytest = "^7.4.0"
+mypy = "^1.4.1"
+interrogate = "^1.5.0"
+pre-commit = "^3.3.3"
+bandit = {extras = ["toml"], version = "^1.7.5"}
+types-pillow = "^9.5.0.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
