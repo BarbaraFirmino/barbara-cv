@@ -1,7 +1,10 @@
+""" image load"""
 import numpy as np
+from numpy.typing import NDArray
 from PIL import Image
 
-def load_image(path: str):
+
+def load_image(path: str) -> NDArray[np.uint8]:
     """Load image from path.
 
     Args:
@@ -11,15 +14,16 @@ def load_image(path: str):
         np.ndarray: Image as numpy array.
     """
     image = Image.open(path)
-    image = image.convert('L')
+    image = image.convert("L")
     return np.asarray(image)
 
-def save_image(image: np.ndarray, path: str):
+
+def save_image(np_array: NDArray[np.uint8], path: str) -> None:
     """Save image to path.
 
     Args:
         image (np.ndarray): Image as numpy array.
         path (str): Path to save image.
     """
-    image = Image.fromarray(image)
+    image = Image.fromarray(np_array)
     image.save(path)
