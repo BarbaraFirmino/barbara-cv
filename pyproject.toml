@@ -27,6 +27,44 @@ pre-commit = "^3.3.3"
 bandit = {extras = ["toml"], version = "^1.7.5"}
 types-pillow = "^9.5.0.5"
 
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+multi_line_output = 1
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+strict = true
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.MASTER]
+fail-under = 10
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+fix = true
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]
+
+[tool.interrogate]
+fail-under = 100
+verbose = 2
+quiet = false
+color = true
+exclude = ["tests/"]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
