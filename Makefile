@@ -8,3 +8,6 @@ pylint:
 mypy:
 	@mypy barbara_cv
 	@mypy tests
+	
+test: 
+	@pytest --cov=barbara_cv --cov-report=term-missing tests
