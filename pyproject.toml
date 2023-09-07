@@ -73,6 +73,7 @@ exclude = ["tests/"]
 omit = [
 	"*__init__*",
 	"barbara_cv/io/image.py",
+	"barbara_cv/cli.py",
 	]
 
 
