@@ -13,7 +13,7 @@ def bright(image: NDArray[np.uint8], value: int) -> NDArray[np.uint8]:
     Returns:
         np.ndarray: Image as numpy array.
     """
-    return (image + value).astype(np.uint8)
+    return np.clip(image.astype(np.int16) + value, 0, 255).astype(np.uint8)
 
 
 def crop(image: NDArray[np.uint8], top: int, left: int, bottom: int, right: int) -> NDArray[np.uint8]:
